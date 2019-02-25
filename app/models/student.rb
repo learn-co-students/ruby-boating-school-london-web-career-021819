@@ -24,13 +24,11 @@ class Student
     pass_count = 0.0
     total_count = 0.0
     BoatingTest.all.select do |test|
-      if test.student == self
-        if test.status == 'passed'
-          pass_count += 1
-          total_count += 1
-        else
-          total_count +=1
-        end
+      if test.student == self && test.status == 'passed'
+        pass_count += 1
+        total_count += 1
+      else
+        total_count +=1
       end
     end
     (pass_count/total_count)*100
