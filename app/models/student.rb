@@ -20,9 +20,9 @@ class Student
   end
 
   def grade_percentage
-    passed_boating_tests = BoatingTest.all.select{|boating_test| boating_test.status == "passed"}
-    count_passed_boating_tests = passed_boating_tests.length
-    count_boating_tests = BoatingTest.all.length
-    percentage_passed = (count_passed_boating_tests/count_boating_tests.to_f)*100
+    passed_tests = BoatingTest.all.select{|boating_test| boating_test.status == "passed"}
+    count_passed_tests = passed_tests.length
+    count_tests = BoatingTest.all.length
+    percentage_passed = (count_passed_tests/count_tests.to_f)*100
   end
 end
