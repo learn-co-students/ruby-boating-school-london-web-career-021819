@@ -5,7 +5,7 @@ class Instructor
 
   def initialize(name)
     @name = name
-    @@instructors << self
+    self.class.all << self
   end
 
   def self.all

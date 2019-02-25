@@ -5,7 +5,7 @@ class Student
 
   def initialize(name)
     @name = name
-    @@students << self
+    self.class.all << self
   end
 
   def self.all
@@ -13,7 +13,7 @@ class Student
   end
 
   def self.find_student(name)
-    self.all.find {|student| student.name == name}
+    all.find {|student| student.name == name}
   end
 
   def add_boating_test(test_name, status, instructor)
