@@ -4,10 +4,25 @@ def reload
   load 'config/environment.rb'
 end
 
-# Insert code here to run before hitting the binding.pry
-# This is a convenient place to define variables and/or set up new object instances,
-# so they will be available to test and play around with in your console
+# Student
+spongebob = Student.new("Spongebob")
+patrick= Student.new("Patrick")
+laura= Student.new("Laura")
+shanna= Student.new("Shanna")
+
+# Instructor
+puff= Instructor.new("Ms.Puff")
+krabs= Instructor.new("Mr.Krabs")
+
+# BoatingTest
+test1 = spongebob.add_boating_test("Don't Crash 101", "pending", puff)
+test2 = patrick.add_boating_test("Power Steering 202", "failed", puff)
+test3 = patrick.add_boating_test("Power Steering 201", "passed", krabs)
+test4 = laura.add_boating_test("My first test", "failed", puff)
+
+# pass_or_fail_student
+puff.pass_or_fail_student(spongebob, "Don't Crash 101", "passed")
+
 
 binding.pry
-0 #leave this here to ensure binding.pry isn't the last line
-
+"Ta-da!"
