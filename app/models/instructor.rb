@@ -13,17 +13,13 @@ class Instructor
     @@all
   end
 
-
   def pass_or_fail_student(student, name, status)
-    result = BoatingTest.all.find do |test|
-      test.student == student && test.name == name
-      end
-      if result
-         result.status = status
-       else
-         # result = BoatingTest.new(student, name, self, "passed")
-         result = student.add_boating_test(name, status, self)
-      end
-      result
-    end
+         found_test = BoatingTest.all.find{|test| test.name == name && test.student == student}
+         if found_test
+             found_test.status = status
+         else
+             found_test = BoatingTest.new(student, name, self, status)
+         end
+         found_test
+     end
   end
